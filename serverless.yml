@@ -1,0 +1,15 @@
+service: lambda-nodejs
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-2
+
+functions:
+  hello:
+    handler: src/hello.handler
+    events:
+      - http:
+          path: /
+          method: get
